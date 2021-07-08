@@ -1,31 +1,35 @@
 # ISE API Documentation
 
-*Explanation of API calls needed to support endpoint quarantine*
+*Explanation of API calls needed to support the automated ANC quarantine process*
 
 ---
 
 ## Purpose
 The purpose of this readme file is to explain the difference between ISE's available APIs (Monitoring vs ERS) 
-and to document all of the necessary API calls for automated ANC policies.
+and to document all of the necessary API calls for the automated ANC quarantine process.
 
 Cisco has documented these API calls for ISE 2.7 on their [Developer Portal](https://developer.cisco.com/docs/identity-services-engine/2.7/).
 
 ## Intended Audience
-These API calls are intended for any InfoSec or Automation engineer responsible for automating ISE quarantine policies and other
-business strategies related to ISE
+These API calls are intended for any InfoSec or Automation engineer responsible for automating ISE API calls, including:
+* Apply ANC Policy
+* Remove ANC Policy
+* Check ANC Policy Status
+* Search for Endpoints
+* Issue a Change of Authorization
 
 ---
-## Monitoring REST API: 
-Allows you to locate, monitor, and accumulate important real-time, session-based information stored in individual endpoints in a network. You can access this information through a physical *Monitoring node*.
+## Monitoring REST API
+Allows you to locate, monitor, and accumulate important real-time, session-based information stored in individual endpoints in a network. You can access this information through a *Monitoring node*.
 
-### Use-Cases:
+### Use-Cases
 * Search for endpoints by MAC address
 * Issue a Change of Authorization
 
-### Features:
+### Features
 * XML headers
-* Basic Authentication using Admin CLI credentials (defined on ISE CLI)
 * XML response
+* Basic Authentication using Admin CLI credentials *(defined on ISE CLI)*
 * Listens on TCP 443
 * Queries only the Monitoring Nodes
 
@@ -44,7 +48,7 @@ Allows you to locate, monitor, and accumulate important real-time, session-based
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
-* Authorization: Basic ("CLI Credentials")
+* Authorization: Basic *("CLI Credentials")*
 #### HTTP Method
 * GET
 #### URI
@@ -55,7 +59,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/Session/ActiveList
 
 *Note: Inactive Sessions are not listed!*
 #### Response
-* This output displays all of the **active endpointsessions** within an ISE deployment. This ISE deployment only has 5 Active endpoint sessions.  
+* This output displays all of the **active endpoint sessions** within an ISE deployment. This ISE deployment only has 5 Active endpoint sessions.  
 
 ```console
 <activeSessionList noOfActiveSession="5">
@@ -120,7 +124,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/Session/ActiveList
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
-* Authorization: Basic ("CLI Credentials")
+* Authorization: Basic *("CLI Credentials")*
 #### HTTP Method
 * GET
 #### URI
@@ -252,14 +256,14 @@ https://{ise-pan-fqdn}/admin/API/mnt/CoA/Reauth/{ise-mnt-hostname}/{endpoint-mac
 * Issue a Change of Authorization to an endpoint to force disconnect and reconnect (effectively forcing it to reauthenticate).
 * The Port Bounce coa shuts down the switch port and then performs a no shutdown to renable it. this causes a link state to change, which simulates unplugigng and plugigng in of the network cable.
 * The benefit of this type of CoA is that many devices try to renew their DHCP-assigned IP addresses when the link state changes. 
-* this can be useful for headless devices and Iot endpoints.
+* This is most useful for headless devices and IoT endpoints!
 #### Purpose
 * Target an endpoint for reauthentication to ISE in order to apply a new auth-z policy, or assign a new logical identity group.
 * In some cases, CoA may be needed to ensure that an ANC policy is applied.
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
-* Authorization: Basic ("CLI Credentials")
+* Authorization: Basic *("CLI Credentials")*
 #### HTTP Method
 * GET
 #### Reauth Type
@@ -285,13 +289,13 @@ https://{ise-pan-fqdn}/admin/API/mnt/CoA/Disconnect/{ise-mnt-hostname}/{endpoint
 </xs:schema>
 ```
 ---
-## External RESTful Services (ERS):
-APIs are based on HTTPS protocol and REST methodology and uses port 9060. ERS is designed to allow external clients to perform CRUD (Create, Read, Update, Delete) operations on Cisco ISE resources. ERS is based on the HTTP protocol and REST methodology. 
+## External RESTful Services (ERS)
+ERS APIs are based on HTTPS protocol and REST methodology and uses port 9060. ERS is designed to allow external clients to perform CRUD (Create, Read, Update, Delete) operations on Cisco ISE resources. 
 
-### Use-Cases:
+### Use-Cases
 * View, Assign, and Clear ANC Policies
 
-### Features:
+### Features
 * JSON headers
 * JSON response
 * HTTP GET, POST, DELETE, PUT Methods
@@ -312,7 +316,7 @@ APIs are based on HTTPS protocol and REST methodology and uses port 9060. ERS is
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
-* Authorization: Basic ("ERS Credentials")
+* Authorization: Basic *("ERS Credentials")*
 #### HTTP Method
 * GET
 #### URI
@@ -359,7 +363,7 @@ JSON
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
-* Authorization: Basic ("ERS Credentials")
+* Authorization: Basic *("ERS Credentials")*
 #### HTTP Method
 * PUT
 #### URI
@@ -397,7 +401,7 @@ N/A
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
-* Authorization: Basic ("ERS Credentials")
+* Authorization: Basic *("ERS Credentials")*
 #### HTTP Method
 * PUT
 #### URI
