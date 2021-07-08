@@ -289,7 +289,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/CoA/Disconnect/{ise-mnt-hostname}/{endpoint
 </xs:schema>
 ```
 ---
-## External RESTful Services (ERS)
+## External RESTful Services (ERS) API
 ERS APIs are based on HTTPS protocol and REST methodology and uses port 9060. ERS is designed to allow external clients to perform CRUD (Create, Read, Update, Delete) operations on Cisco ISE resources. 
 
 ### Use-Cases
