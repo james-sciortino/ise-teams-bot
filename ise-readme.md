@@ -30,7 +30,7 @@ Allows you to locate, monitor, and accumulate important real-time, session-based
 ### Features
 * XML headers
 * XML response
-* Basic Authentication using Admin CLI credentials *(defined on ISE CLI)*
+* Basic Authentication
 * Listens on TCP 443
 * Queries only the Monitoring Nodes
 
@@ -49,7 +49,7 @@ Allows you to locate, monitor, and accumulate important real-time, session-based
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
-* Authorization: Basic *("CLI Credentials")*
+* Authorization: Basic 
 #### HTTP Method
 * GET
 #### URI
@@ -125,7 +125,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/Session/ActiveList
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
-* Authorization: Basic *("CLI Credentials")*
+* Authorization: Basic 
 #### HTTP Method
 * GET
 #### URI
@@ -230,7 +230,7 @@ CACS:0ACB6BA1000000351BBFBF8B:HAREESH-R6-1-PDP2/81148292/681
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
-* Authorization: Basic ("CLI Credentials")
+* Authorization: Basic 
 #### HTTP Method
 * GET
 #### Reauth Type
@@ -264,7 +264,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/CoA/Reauth/{ise-mnt-hostname}/{endpoint-mac
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
-* Authorization: Basic *("CLI Credentials")*
+* Authorization: Basic 
 #### HTTP Method
 * GET
 #### Reauth Type
@@ -300,7 +300,7 @@ ERS APIs are based on HTTPS protocol and REST methodology and uses port 9060. ER
 * JSON headers
 * JSON response
 * HTTP GET, POST, DELETE, PUT Methods
-* Basic Authentication using ERS credentials (defined on ISE GUI)
+* Basic Authentication
 * Listens on TCP 9060
 * Queries the Policy Administration Node
 
@@ -317,7 +317,7 @@ ERS APIs are based on HTTPS protocol and REST methodology and uses port 9060. ER
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
-* Authorization: Basic *("ERS Credentials")*
+* Authorization: Basic
 #### HTTP Method
 * GET
 #### URI
@@ -364,7 +364,7 @@ JSON
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
-* Authorization: Basic *("ERS Credentials")*
+* Authorization: Basic
 #### HTTP Method
 * PUT
 #### URI
@@ -402,7 +402,7 @@ N/A
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
-* Authorization: Basic *("ERS Credentials")*
+* Authorization: Basic
 #### HTTP Method
 * PUT
 #### URI
