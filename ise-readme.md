@@ -16,7 +16,8 @@ These API calls are intended for any InfoSec or Automation engineer responsible 
 * Remove ANC Policy
 * Check ANC Policy Status
 * Search for Endpoints
-* Issue a Change of Authorization
+* Issue a Change of Authorization Reauth
+* Issue a Change of Authorization Disconnect
 
 ---
 ## Monitoring REST API
