@@ -120,7 +120,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/Session/ActiveList
 #### Function
 * View an endpoint's active session information by querying its MAC address.
 #### Purpose
-* Target an endpoint to obtain to obtain its RADIUS information, including IP Address, NAD, Location, UserName, etc.
+* Target an endpoint to obtain to obtain its RADIUS information, including IP Address, NAD, Location, UserName, and more.
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
@@ -225,7 +225,7 @@ CACS:0ACB6BA1000000351BBFBF8B:HAREESH-R6-1-PDP2/81148292/681
 * The new authentication maintains the same authentication session ID. 
 #### Purpose
 * Target an endpoint for reauthentication to ISE in order to apply a new auth-z policy, or assign a new logical identity group.
-* In some cases, CoA may be needed to ensure that an ANC policy is applied.
+* In some scenarios, CoA may be needed to ensure an ANC policy is applied.
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
@@ -259,7 +259,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/CoA/Reauth/{ise-mnt-hostname}/{endpoint-mac
 * This is most useful for headless devices and IoT endpoints!
 #### Purpose
 * Target an endpoint for reauthentication to ISE in order to apply a new auth-z policy, or assign a new logical identity group.
-* In some cases, CoA may be needed to ensure that an ANC policy is applied.
+* In some scenarios, CoA may be needed to ensure that an ANC policy is applied.
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
@@ -310,9 +310,9 @@ ERS APIs are based on HTTPS protocol and REST methodology and uses port 9060. ER
 ### [View All ANC Endpoints](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/api-reference)
 
 #### Function
-* View all endpoints that have been assigned to a quarantine ANC policy.
+* View all endpoints that have been assigned to a ANC quarantine policy.
 #### Purpose
-* The best way to verify an ANC policy has been programmatically successfully.
+* Verify an ANC policy has been applied successfully to a specific endpoint.
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
@@ -357,9 +357,9 @@ JSON
 ### [Assign ANC Policy to an Endpoint](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/api-reference)
 
 #### Function
-* Assign an ANC policy to an endpoint for quarantine.
+* Assign an endpoint to an ANC Quarantine policy.
 #### Purpose
-* The only method to quarantine an endpoint.
+* Quarantine an endpoint with an appropriate ANC policy for restricted access.
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
@@ -397,7 +397,7 @@ N/A
 #### Function
 * Clear an ANC policy from an endpoint in quarantine.
 #### Purpose
-* The only method to clear an endpoint from quarantine.
+* Remove ANC Quarantine policy from an endpoint to re-establish full network access.
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
