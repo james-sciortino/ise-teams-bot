@@ -1,0 +1,28 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "type": "ImageSet",
+        "imageSize": "small",
+        "images": [
+          {
+            "type": "Image",
+            "url": "https://sciortino.blob.core.windows.net/automation-stuff/Cisco-Identity-Services-Engine-ISE.png"
+          }
+        ]
+      },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "weight": "lighter"
+      },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "weight": "lighter"
+      }
+    ]
+}
+

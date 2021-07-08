@@ -1,0 +1,18 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "type": "TextBlock",
+        "text": "ANC Actions Available:",
+        "size": "default",
+        "weight": "lighter"
+     },
+      {
+        "type": "TextBlock",
+        "size": "default",
+        "weight": "lighter"
+     }
+    ]
+}
