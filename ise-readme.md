@@ -372,7 +372,7 @@ JSON
 https://{ise-pan-fqdn}:9060/ers/config/ancendpoint
 ```
 #### Body
-*You must provide the following .json body with your HTTP POST request, including the MAC address and name of the appropriate ANC Policy to be assigned*
+*You must provide the following .json body with your HTTP PUT request, including the MAC address and name of the appropriate ANC Policy to be assigned*
 ```console
 {
   "OperationAdditionalData" : {
@@ -410,7 +410,7 @@ N/A
 https://{ise-pan-fqdn}:9060/ers/config/ancendpoint/clear
 ```
 #### Body
-*You must provide the following .json body with your HTTP POST request, including the MAC address and name of the appropriate ANC Policy to be removed*
+*You must provide the following .json body with your HTTP PUT request, including the MAC address and name of the appropriate ANC Policy to be removed*
 ```console
 {
   "OperationAdditionalData" : {
