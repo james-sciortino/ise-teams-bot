@@ -1,13 +1,14 @@
-# ISE ANC Automation API Guidelines
+# ISE ANC Automation API Procedure
 
 *Explanation of API calls needed to support the automated ANC quarantine process*
 
 ---
 
-## Purpose
-The purpose of this readme file is to explain the API calls need to execute an ANC quarantine policy, in order.
+## About
+The purpose of this procedural document is to explain the API calls need to execute an ANC quarantine policy, in order.
+These steps should match KB article for ANC Quarantine.
 
-Cisco has documented these API calls for ISE 2.7 on their [Developer Portal](https://developer.cisco.com/docs/identity-services-engine/2.7/).
+For additional technical details on Cisco ISE API, navigate to Cisco's [Developer Portal](https://developer.cisco.com/docs/identity-services-engine/2.7/).
 
 ---
 ## Prerequisites
@@ -17,7 +18,7 @@ You must know the ANC policy you wish to assign to the endpoint. There are three
 * ANC_Quarantine_Internal_Remediation
 * ANC_Quarantine_With_Internet_Only
 
-## Step 1 -[Assign the endpoint to the ANC Policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/api-reference)
+## Step 1 -[Assign the endpoint to the ANC Policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/apply)
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
@@ -26,7 +27,7 @@ You must know the ANC policy you wish to assign to the endpoint. There are three
 * PUT
 #### URI
 ```console
-https://{ise-pan-fqdn}:9060/ers/config/ancendpoint
+https://{ise-pan-fqdn}:9060/ers/config/ancendpoint/apply
 ```
 #### Body
 *NOTE:*
@@ -84,13 +85,13 @@ N/A
 ```
 ---
 
-## Step 2 -  [Verify the endpoint has been assigned to the ANC Quarantine policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/api-reference)
+## Step 2 -  [Verify the endpoint has been assigned to the ANC Quarantine policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/get-all)
 
 ## Part 1
 #### Purpose
 * Returns a list of *all* endpoints that are currently assigned to an ANC policy.
-* The UUID (or, *id*) for each endpoint is listed in the response for this API call. 
-* This *id* is needed in Step 2 - Part 2 (below)
+* The UUID (or, *id*) for each endpoint is listed in the response of this API call. 
+* The UUID (or, *id*) is needed for verification of the endpoint in Step 2 - Part 2 (below)
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
@@ -123,7 +124,7 @@ https://{ise-pan-fqdn}:9060/ers/config/ancendpoint
 ### Part 2
 #### Purpose
 * Loop through each UUID (or, *id*)
-* Find the targeted MAC address to ensure that is assigned to the ANC_No_Access policy
+* Find the targeted MAC address to ensure that is assigned to the appropriate ANC Policy.
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
@@ -152,9 +153,9 @@ https://{ise-pan-fqdn}:9060/ers/config/ancendpoint/{id}
 ```
 ---
 
-## Step 3 - [Validate the Endpoint's RADIUS Session Info.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/api-reference)
+## Step 3 - [Validate the Endpoint's RADIUS Session Info.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!using-api-calls-for-session-management/invoking-the-activelist-api-call)
 #### Purpose
-* Equivalent to checking ISE Live Logs, to be sure the endpoint has been reauthorized with the ANC policy
+* Equivalent to checking ISE Live Logs, to be sure the endpoint has been reauthorized with the ANC policy.
 #### Headers
 * Content-Type: application/xml
 * Accept: application/xml
@@ -225,7 +226,7 @@ https://{ise-pan-fqdn}/admin/API/mnt/Session/MACAddress/{mac-address}
 ```
 
 
-## Step 4 - [Remove the ANC Quarantine policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/api-reference)
+## Step 4 - [Clear the ANC Quarantine policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/api-reference)
 #### Purpose
 * Removes the endpoint from the ANC policy
 #### Headers
