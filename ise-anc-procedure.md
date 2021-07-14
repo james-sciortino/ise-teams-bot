@@ -18,12 +18,7 @@ For additional technical details on Cisco ISE API, navigate to Cisco's [Develope
 * ANC_Quarantine_Internal_Remediation
 * ANC_Quarantine_With_Internet_Only
 
-## Index
--[Step 1 - Assign the endpoint to the ANC Policy.](#Step-1)
--[Step 2 - Verify the endpoint has been assigned to the ANC Quarantine policy](#Step-2)
-  *[Part 1 - Find all quarantined endpoints](#Part1)
-
-### Step 1 -[Assign the endpoint to the ANC Policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/apply)
+## Step 1 -[Assign the endpoint to the ANC Policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/apply)
 #### Headers
 * Content-Type: application/json
 * Accept: application/json
@@ -90,9 +85,9 @@ N/A
 ```
 ---
 
-### Step 2 - [Verify the endpoint has been assigned to the ANC Quarantine policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/get-all)
+## Step 2 - [Verify the endpoint has been assigned to the ANC Quarantine policy.](https://developer.cisco.com/docs/identity-services-engine/2.7/#!anc-endpoint/get-all)
 
-## Part 1 - Find all quarantined endpoints
+### Part 1 - Find all quarantined endpoints
 #### Purpose
 * Returns a list of *all* endpoints that are currently assigned to an ANC policy.
 * The UUID (or, *id*) for each endpoint is listed in the response of this API call. 
@@ -126,7 +121,7 @@ https://{ise-pan-fqdn}:9060/ers/config/ancendpoint
 }
 ```
 
-## Part 2 - Find the specific quarantined endpoint.
+### Part 2 - Find the specific quarantined endpoint.
 #### Purpose
 * Loop through each UUID (or, *id*)
 * Find the targeted MAC address to ensure that is assigned to the appropriate ANC Policy.
