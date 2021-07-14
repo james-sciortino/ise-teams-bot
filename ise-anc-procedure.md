@@ -12,8 +12,8 @@ For additional technical details on Cisco ISE API, navigate to Cisco's [Develope
 
 ---
 ## Prerequisites
-You must know the MAC address of the endpoint.
-You must know the ANC policy you wish to assign to the endpoint. There are three (3) ANC policies:
+1. You must know the MAC address of the endpoint.
+2. You must know the ANC policy you wish to assign to the endpoint. There are three (3) ANC policies:
 * ANC_No_Access
 * ANC_Quarantine_Internal_Remediation
 * ANC_Quarantine_With_Internet_Only
