@@ -121,7 +121,7 @@ https://{ise-pan-fqdn}:9060/ers/config/ancendpoint
 }
 ```
 
-### Part 2
+## Part 2
 #### Purpose
 * Loop through each UUID (or, *id*)
 * Find the targeted MAC address to ensure that is assigned to the appropriate ANC Policy.
